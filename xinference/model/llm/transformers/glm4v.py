@@ -185,8 +185,10 @@ class Glm4VModel(PytorchChatModel):
             **inputs,
             "eos_token_id": [151329, 151336, 151338],
             "do_sample": True,
-            "max_length": generate_config.get("max_tokens", 2048),
-            "temperature": generate_config.get("temperature", 0.7),
+            "max_length": generate_config.get("max_tokens", 8192),
+            "temperature": generate_config.get("temperature", 0.3),
+            "top_k": generate_config.get("top_k", 35),
+            "repetition_penalty": generate_config.get("repetition_penalty", 1.05),
         }
         stop_str = "<|endoftext|>"
 
